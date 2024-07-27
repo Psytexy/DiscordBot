@@ -1,19 +1,20 @@
 package org.example;
+import io.github.cdimascio.dotenv.Dotenv;
 import org.javacord.api.DiscordApi;
 import org.javacord.api.DiscordApiBuilder;
 import org.javacord.api.entity.intent.Intent;
-
-
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
     public static void main(String[] args) {
-        // Log the bot in
+        Dotenv dotenv = Dotenv.load();
+        String token = dotenv.get("TOKEN");
         DiscordApi api = new DiscordApiBuilder()
-                .setToken("TOKEN")
+                .setToken(token)
                 .setAllIntents()
-                .login().join();
+                .login()
+                .join();
 
         // Add a listener which answers with "Pong!" if someone writes "!ping"
         api.addMessageCreateListener(event -> {
@@ -27,3 +28,4 @@ public class Main {
     }
 
 }
+
