@@ -1,4 +1,6 @@
 package Sektant.commands;
+import java.awt.*;
+import java.util.stream.Collectors;
 import org.javacord.api.entity.activity.Activity;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.entity.user.User;
@@ -7,8 +9,6 @@ import org.javacord.api.exception.MissingPermissionsException;
 import org.javacord.api.listener.message.MessageCreateListener;
 import org.javacord.api.util.logging.ExceptionLogger;
 
-import java.awt.*;
-import java.util.stream.Collectors;
 public class UserInfoCommand implements MessageCreateListener{
     @Override
     public void onMessageCreate(MessageCreateEvent event) {
