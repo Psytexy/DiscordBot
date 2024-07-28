@@ -1,5 +1,4 @@
 package Sektant;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.javacord.api.DiscordApi;
@@ -21,9 +20,6 @@ public class Main {
                     .login()
                     .join();
 
-
-
-        // Print the invite url of your bot
         System.out.println("You can invite the bot by using the following url: " + api.createBotInvite());
             api.addMessageCreateListener(new CopyAvatarCommand());
             api.addMessageCreateListener(new UserInfoCommand());
